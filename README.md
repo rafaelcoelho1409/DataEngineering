@@ -1,7 +1,7 @@
 # Engenharia de Dados e Machine Learning com Airflow & PySpark
 
 ## Objetivo
-Construir um pipeline completo de dados que extrai os valores do Bitcoin em um intervalo de cinco anos, que também faz predição de valores usando Machine Learning dentro de um intervalo de 30 dias, e dá como produto final um gráfico interativo do Plotly em formato HTML e uma tabela de dados de Bitcoin em um arquivo csv.  
+Construir um pipeline completo de dados que extrai os valores do Bitcoin em um intervalo de cinco anos, que também faz predição de valores usando Machine Learning dentro de um intervalo de 30 dias, e dá como produto final um gráfico interativo do Plotly em formato HTML e uma tabela de dados de Bitcoin em um arquivo csv. Estes arquivos estão em $HOME/BitcoinPredictions.  
   
 Mais especificamente, o objetivo ao construir este repositório foi testar o Airflow com o Pyspark. A versão final está muito diferente do que eu havia planejado fazer, usando Programação Orientada a Objetos. Precisei fazer muitos ajustes pois tive muita dificuldade de fazer um código em nível mais atômico que tivesse uma boa integração entre Airflow e PySpark.  
   
