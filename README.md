@@ -1,23 +1,21 @@
-# Engenharia de Dados e Machine Learning com Airflow & PySpark
+# Data Engineering and Machine Learning with Airflow & PySpark
 
-## Objetivo
-Construir um pipeline completo de dados que extrai os valores do Bitcoin em um intervalo de cinco anos, que também faz predição de valores usando Machine Learning dentro de um intervalo de 30 dias, e dá como produto final um gráfico interativo do Plotly em formato HTML e uma tabela de dados de Bitcoin em um arquivo csv. Estes arquivos estão em $HOME/BitcoinPredictions.  
+## Purpose
+Build a full data pipeline that extracts Bitcoin values in a five years interval, also making value predictions using Machine Learning into a 30 days interval, and returns as a final product an interactive Plotly graph in HTML format and a Bitcoin data table in a csv file. These files are on $HOME/BitcoinPredictions.  
   
-Mais especificamente, o objetivo ao construir este repositório foi testar o Airflow com o Pyspark. A versão final está muito diferente do que eu havia planejado fazer, usando Programação Orientada a Objetos. Precisei fazer muitos ajustes pois tive muita dificuldade de fazer um código em nível mais atômico que tivesse uma boa integração entre Airflow e PySpark.  
+Another purpose for building this repo is to test Airflow with Pyspark. The final version is very different from the one I had planned to do, using Object-Oriented Programming. In the time I developed this project, I needed to do a lot of adjusts because I had some difficulties to write a more atomized code that could have a good integration between Airflow and PySpark.  
   
-A versão final se encontra no arquivo bitcoin_pyspark_dag.py.  
-  
-Em especial, o XCom do Airflow (que permite que você compartilhe variáveis entre diferentes funções dentro de uma DAG) não tem uma boa integração com DataFrames do Pyspark. Porém, pode ser que com o Pandas, por exemplo, seja uma ferramenta que funcione muito bem com o XCom. 
+The final version is in the 'bitcoin_pyspark_dag.py' file.  
    
-Usei a biblioteca de Machine Learning do PySpark chamada Mlib (pyspark.ml), e usei o modelo Gradient Boosting Tree Regressor para fazer a predição dos valores do Bitcoin, envolvendo também ajuste de hiperparâmetros deste modelo, como o número de árvores e cross-validation.  
+I used PySpark Machine Learning framework called Mlib (pyspark.ml), and I also used Gradient Boosting Tree Regressor model to make Bitcoin value predictions, making also hyperparameters adjustment like tree number and cross-validation from this model.  
 
-## Recursos utilizados
+## Resources
 - Visual Studio Code
 - python3.9
 - virtualenv
-- pip3: gerenciador de pacotes python3.x
+- pip3: python3.x packages manager
 
-## Pacotes do Python
+## Python packages
 - airflow
 - os
 - datetime
@@ -26,20 +24,20 @@ Usei a biblioteca de Machine Learning do PySpark chamada Mlib (pyspark.ml), e us
 - pandas
 - pyspark
 
-## Imagens do projeto
+## Images from this project
 <img src="plot1.png" />
 
-## Como executar localmente esse projeto em sua máquina
-- baixe esse repositório localmente em sua máquina:  
+## Running this repo in your local machine
+- clone this repo:    
 > git clone https://github.com/rafaelcoelho1409/DataEngineering.git  
-- Instale os pacotes necessários que estão no arquivo dataeng_requirements.txt:  
+- install required packages that are in 'dataeng_requirements.txt' file:  
 > pip3 install -r dataeng_requirements.txt  
-- escolha seu interpretador python (python3, python3.x)  
-- instale o airflow:  
+- choose your python interpreter (python3.x)  
+- install Airflow:  
 > pip3 install apache-airflow  
-- encontre a pasta de DAGs do Airflow na sua máquina (em geral, $AIRFLOW_HOME/dags)    
-- copie e cole o arquivo bitcoin_pyspark_dag.py dentro desta pasta ($AIRFLOW_HOME/dags)  
-- acesse o Airflow pelo seu navegador (https://localhost:8080)  
-- ative a DAG e execute ela (Trigger DAG)  
-- orientações mais completas de automatização de dados com Airflow:  
+- Find the Airflow DAGs folder in your machine (generally, $AIRFLOW_HOME/dags)    
+- copy and paste 'bitcoin_pyspark_dag.py' file into this folder ($AIRFLOW_HOME/dags)  
+- access Airflow on your browser (https://localhost:8080)  
+- Activate the DAG and trigger it  
+- More orientations about Airflow data automation:  
 > https://airflow.apache.org/docs/apache-airflow/stable/tutorial.html
